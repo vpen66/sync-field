@@ -1,0 +1,140 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.vpen.sync-field</id>
+    <version>1.0.1</version>
+
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>Sync-Field</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="1453313323@qq.com" url="https://github.com/vpen66/sync-field">Vpen</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    <tag>SyncField is an IntelliJ IDEA plugin designed specifically for Java developers, aimed at solving problems in VO DTO、 After adding fields to entity classes, it is necessary to add fields to multiple vo and dto files, and finding classes in multiple packages can also be a hassle</tab>
+    <h3>How to use:</h3>
+    <ul>
+    <li>1. Right-click on a similar class and select the current source class name. Right click ->Synchronize ->Search Related Classes</li>
+    <li>2. The right-hand column will display which classes are associated with the current class. You can select multiple options to cancel the association, split and open the window, or close the split window</li>
+    <li>3. After you associate the class you want to synchronize with, you can select fields, annotations, comments, and methods in your source class. Once selected, an action button will automatically pop up</li>
+    <li>4. Support shortcut keys, support closing the operation panel and opening the panel. It is recommended to close the panel and then use a custom toolbar</li>
+    <li>5. The right sidebar supports dragging and dropping classes to add associated classes</li>
+    </ul>
+
+    <tag>SyncField 是一款专为 Java 开发者设计的 IntelliJ IDEA 插件，旨在解决在 VO、DTO、实体类添加字段后，需要在多个vo、dto也加入字段的问题，在多个包中寻找类也是件麻烦事呢</tag>
+     <h3>如何使用:</h3>
+      <ul>
+        <li>1.右键关联相似的类 选中当前源类名右键->同步操作->关联其他类</li>
+        <li>2.右边栏就出现当前类关联了哪些类的，你可以多选取消关联，多选拆分打开窗口和关闭拆分窗口</li>
+        <li>3.当你关联了你要同步的类后，你就可以在你的源类中选中字段、注解、注释、方法，选中后就会自动弹出操作按钮</li>
+        <li>4.支持自定义快捷键，支持关闭操作面板和开启面板，推荐关闭面板然后使用自定义工具栏</li>
+        <li>5.右边栏支持拖拽类即可新增关联的类和按钮新增关联类</li>
+        <li>5.批量同步功能，可选择同步内容</li>
+      </ul>
+
+]]></description>
+    <change-notes><![CDATA[
+        <h2>version 1.0.1</h2>
+        <h3>New features:</ h3>
+        <ul>
+            <li>1. Support shortcut keys, support closing the operation panel and opening the panel. It is recommended to close the panel and then use a custom toolbar</li>
+            <li>2. The right sidebar supports dragging and dropping classes to add associated classes</li>
+            <li>3. Optimized some code</li>
+        </ul>
+         <h3>新增功能:</h3>
+          <ul>
+            <li>1.支持自定义快捷键，支持关闭操作面板和开启面板，推荐关闭面板然后使用自定义工具栏</li>
+            <li>2.右边栏支持拖拽类即可新增关联的类和按钮新增关联类</li>
+            <li>3.优化了一些代码</li>
+            <li>4.批量同步功能，可选择同步内容</li>
+          </ul>
+
+
+
+    <h2>version 1.0.0</h2>
+    <tag>SyncField is an IntelliJ IDEA plugin designed specifically for Java developers, aimed at solving problems in VO DTO、 After adding fields to entity classes, it is necessary to add fields to multiple vo and dto files, and finding classes in multiple packages can also be a hassle</tab>
+    <h3>How to use:</h3>
+    <ul>
+        <li>1. Right-click on a similar class and select the current source class name. Right click ->Synchronize ->Search Related Classes</li>
+        <li>2. The right-hand column will display which classes are associated with the current class. You can select multiple options to cancel the association, split and open the window, or close the split window</li>
+        <li>3. After you associate the class you want to synchronize with, you can select fields, annotations, comments, and methods in your source class. Once selected, an action button will automatically pop up</li>
+    </ul>
+     <tag>SyncField 是一款专为 Java 开发者设计的 IntelliJ IDEA 插件，旨在解决在 VO、DTO、实体类添加字段后，需要在多个vo、dto也加入字段的问题，在多个包中寻找类也是件麻烦事呢</tag>
+     <h3>如何使用:</h3>
+      <ul>
+        <li>1.右键关联相似的类 选中当前源类名右键->同步操作->Search Related Classes</li>
+        <li>2.右边栏就出现当前类关联了哪些类的，你可以多选取消关联，多选拆分打开窗口和关闭拆分窗口</li>
+        <li>3.当你关联了你要同步的类后，你就可以在你的源类中选中字段、注解、注释、方法，选中后就会自动弹出操作按钮</li>
+      </ul>
+    ]]></change-notes>
+
+    <idea-version since-build="231"/>
+
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="RCW"
+                    factoryClass="com.vpen.syncfield.window.RelatedClassToolWindowFactory"
+                    anchor="right"
+                    canCloseContents="true"
+                    secondary="false"/>
+
+    </extensions>
+    <actions>
+        <!-- 定义 ActionGroup -->
+        <group id="SyncGroup" class="com.vpen.syncfield.action.MyActionGroup"
+               text="同步操作" popup="true">
+            <!-- 添加子 Action -->
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+            <action id="SyncFieldAction"
+                    class="com.vpen.syncfield.action.SearchRelatedClassesAction"
+                    text="关联其他类"
+                    description="Select related classes to sync fields" icon="AllIcons.Actions.DependencyAnalyzer">
+                <keyboard-shortcut keymap="$default" first-keystroke="alt shift S"/>
+            </action>
+            <action id="ShowPopupMenuAction"
+                    class="com.vpen.syncfield.action.ShowPopupMenuAction"
+                    text="显示操作面板"
+                    description="Show popup menu" icon="AllIcons.Actions.InlayGear">
+                <keyboard-shortcut keymap="$default" first-keystroke="alt shift M"/>
+            </action>
+            <action id="CreateAction"
+                    class="com.vpen.syncfield.action.button.CreateActon"
+                    text="新增"
+                    description="Create" icon="AllIcons.Actions.AddMulticaret">
+                <keyboard-shortcut keymap="$default" first-keystroke="alt shift C"/>
+            </action>
+            <action id="DeleteAction"
+                    class="com.vpen.syncfield.action.button.DeleteAction"
+                    text="删除"
+                    description="Delete" icon="AllIcons.Actions.ClearCash">
+                <keyboard-shortcut keymap="$default" first-keystroke="alt shift D"/>
+            </action>
+            <action id="BeforeAction"
+                    class="com.vpen.syncfield.action.button.BeforeAction"
+                    text="修改后"
+                    description="Before update" icon="AllIcons.Actions.EditSource">
+                <keyboard-shortcut keymap="$default" first-keystroke="alt shift B"/>
+            </action>
+            <action id="AfterAction"
+                    class="com.vpen.syncfield.action.button.AfterAction"
+                    text="修改前"
+                    description="After update" icon="AllIcons.Actions.BuildLoadChanges">
+                <keyboard-shortcut keymap="$default" first-keystroke="alt shift A"/>
+            </action>
+        </group>
+    </actions>
+
+
+</idea-plugin>
